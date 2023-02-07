@@ -21,29 +21,25 @@ class Main {
     }
 
     private static int symbolToInt(char symbol) {
-        if (symbol == 'I') {
-            return 1;
-        }
-        else if (symbol == 'V') {
-            return 5;
-        }
-        else if (symbol == 'X') {
-            return 10;
-        }
-        else if (symbol == 'L') {
-            return 50;
-        }
-        else if (symbol == 'C') {
-            return 100;
-        }
-        else if (symbol == 'D') {
-            return 500;
-        }
-        else if (symbol == 'M') {
-            return 1000;
-        }
-        else {
-            throw new IllegalArgumentException("Symbol " + symbol + " not recognised. Symbols must be either I, V, X, L, C, D, or M.");
+        char uppercaseSymbol = Character.toUpperCase(symbol);
+
+        switch (uppercaseSymbol) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+            default:
+                throw new IllegalArgumentException("Symbol " + symbol + " not recognised. Symbols must be either I, V, X, L, C, D, or M.");
         }
     }
 
